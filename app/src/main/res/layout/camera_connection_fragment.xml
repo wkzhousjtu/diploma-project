@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ Copyright 2014 The Android Open Source Project
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/constraintLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="2dp"
+            android:text="嘴唇对称轴："
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/sb1_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/seekBar1"
+            android:layout_alignEnd="@+id/btn_end"
+            android:layout_marginEnd="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="0dp"
+            android:text="眉毛高低比"
+            android:textSize="30sp"
+            app:layout_constraintRight_toLeftOf="@+id/seekBar1"
+            app:layout_constraintTop_toTopOf="@+id/seekBar1" />
+
+        <TextView
+            android:id="@+id/sb2_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="45dp"
+            android:layout_marginTop="0dp"
+            android:text="嘴角宽度比"
+            android:textSize="30sp"
+            app:layout_constraintRight_toLeftOf="@+id/seekBar2"
+            app:layout_constraintTop_toTopOf="@+id/seekBar2" />
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:maxHeight="5.0dip"
+            android:minHeight="5.0dip"
+            android:layout_above="@+id/full"
+            android:max="1000"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+            app:layout_constraintRight_toLeftOf="@+id/guideline4"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="432dp" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/seekBar1"
+            android:layout_alignEnd="@+id/seekBar1"
+            android:layout_alignStart="@+id/seekBar1"
+            android:layout_marginTop="24dp"
+            android:max="1000"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/seekBar1"
+            app:layout_constraintRight_toRightOf="@+id/seekBar1"
+            app:layout_constraintTop_toBottomOf="@+id/seekBar1" />
+
+        <TextView
+            android:id="@+id/msg1_tv"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:text="1号滑块"
+            android:textAlignment="viewStart"
+            android:textSize="24sp"
+            android:layout_marginRight="0dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/seekBar1"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintHorizontal_bias="0.39"
+            app:layout_constraintTop_toTopOf="@+id/seekBar1"
+            android:layout_marginTop="0dp" />
+
+        <TextView
+            android:id="@+id/msg2_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/msg1_tv"
+            android:layout_alignStart="@+id/msg1_tv"
+            android:layout_marginEnd="112dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_weight="1"
+            android:text="2号滑块"
+            android:textAlignment="viewStart"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="@+id/msg1_tv"
+            app:layout_constraintTop_toBottomOf="@+id/msg1_tv" />
+
+        <Button
+            android:id="@+id/btn_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/msg2_tv"
+            android:layout_alignParentBottom="true"
+            android:text="结束训练"
+            android:layout_marginLeft="30dp"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+            android:layout_marginTop="35dp"
+            app:layout_constraintTop_toBottomOf="@+id/full"
+            android:layout_marginStart="30dp" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_end"
+            android:layout_alignBottom="@+id/btn_end"
+            android:layout_toStartOf="@+id/btn_end"
+            android:text="开始训练"
+            app:layout_constraintRight_toLeftOf="@+id/guideline4"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="35dp"
+            app:layout_constraintTop_toBottomOf="@+id/full"
+            android:layout_marginEnd="32dp" />
+
+        <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline4"
+            app:layout_constraintGuide_begin="300dp"
+            android:orientation="vertical" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/seekBar1"
+            android:layout_alignStart="@+id/sb1_tv"
+            android:layout_marginEnd="45dp"
+            android:text="计时"
+            android:textSize="30sp"
+            app:layout_constraintRight_toLeftOf="@+id/full"
+            android:layout_marginRight="60dp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintTop_toTopOf="@+id/full"
+            android:layout_marginTop="-15dp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="128dp"
+            android:layout_marginTop="219dp"
+            android:text="鼻梁对称轴："
+            android:textSize="24sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="人脸对称轴："
+            android:textSize="24sp"
+            android:layout_marginLeft="0dp"
+            app:layout_constraintLeft_toLeftOf="@+id/textView10"
+            android:layout_marginTop="2dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <LinearLayout
+            android:id="@+id/full"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_above="@+id/btn_start"
+            android:layout_marginBottom="201dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintLeft_toLeftOf="@+id/guideline4"
+            app:layout_constraintRight_toLeftOf="@+id/guideline4">
+
+            <ProgressBar
+                android:id="@+id/progesssBar"
+                style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+                android:layout_width="330dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/myprogressbar"
+                android:indeterminateDrawable="@android:drawable/progress_indeterminate_horizontal"
+                android:indeterminateOnly="false"
+                android:max="20000"
+                android:maxHeight="50dp"
+                android:minHeight="16dp"
+                android:progressDrawable="@drawable/myprogressbar" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="2dp"
+            android:text="鼻嘴对称轴："
+            android:textSize="24sp"
+            app:layout_constraintLeft_toLeftOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/axisN_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="3dp"
+            android:text="15"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toRightOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/axisNM_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="0dp"
+            android:text="15"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toRightOf="@+id/textView10"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/axisM_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="0dp"
+            android:text="15"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toRightOf="@+id/textView10"
+            app:layout_constraintTop_toTopOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/axisF_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="0dp"
+            android:text="15"
+            android:textSize="24sp"
+            app:layout_constraintLeft_toRightOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/cam_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="55dp"
+            android:layout_marginLeft="0dp"
+            android:text="请将面部正对摄像头"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
+            app:layout_constraintLeft_toLeftOf="@+id/textView6" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <com.tzutalin.dlibtest.AutoFitTextureView
+        android:id="@+id/texture"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    
+    <com.tzutalin.dlibtest.TrasparentTitleView
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:layout_alignParentTop="true" />
+
+
+    <com.tzutalin.dlibtest.TrasparentTitleView
+        android:id="@+id/showMessage"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:layout_alignParentBottom="true" />
+
+
+</RelativeLayout>
